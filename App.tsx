@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
 
@@ -12,7 +14,7 @@ const App: React.FC = () => {
         <NavigationContainer>
             <StatusBar
                 barStyle={Constants.lightContent}
-                backgroundColor={Colors.primaryColor}
+                backgroundColor={Colors.PRIMARY_COLOR}
             />
             <View style={styles.container}>
                 <Routes />
@@ -22,7 +24,10 @@ const App: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: Colors.primaryColor },
+    container: {
+        flex: 1,
+        backgroundColor: Colors.PRIMARY_COLOR,
+    },
 });
 
 export default App;
