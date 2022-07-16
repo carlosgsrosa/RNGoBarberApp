@@ -1,8 +1,9 @@
 import React from 'react';
 import { TextInputProps } from 'react-native';
+
 import { Colors } from '../../values';
 
-import { View, CustomTextInput } from './styles';
+import { ViewStyed, TextInputStyled, IconStyled } from './styles';
 
 interface Props extends TextInputProps {
     name: string;
@@ -11,9 +12,10 @@ interface Props extends TextInputProps {
 
 const TextInput: React.FC<Props> = ({ name, icon, ...rest }) => {
     return (
-        <View>
-            <CustomTextInput placeholderTextColor={Colors.BROWN} {...rest} />
-        </View>
+        <ViewStyed>
+            <IconStyled name={icon} size={20} />
+            <TextInputStyled placeholderTextColor={Colors.BROWN} {...rest} />
+        </ViewStyed>
     );
 };
 

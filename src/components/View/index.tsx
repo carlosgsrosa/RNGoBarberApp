@@ -1,7 +1,7 @@
 import React from 'react';
 import { ViewStyle } from 'react-native';
 
-import { CustomView } from './styles';
+import { ViewStyled } from './styles';
 
 interface Props {
     flex?: ViewStyle['flex'];
@@ -20,14 +20,14 @@ const View: React.FC<Props> = ({
     ...rest
 }) => {
     return (
-        <CustomView
+        <ViewStyled
             flex={flex}
             centerY={centerY}
             centerX={centerX}
             padding={padding}
             {...rest}>
             {children}
-        </CustomView>
+        </ViewStyled>
     );
 };
 

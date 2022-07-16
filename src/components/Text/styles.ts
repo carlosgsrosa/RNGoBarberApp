@@ -2,11 +2,10 @@ import styled from 'styled-components/native';
 
 import { Colors, Fonts } from '../../values';
 
-export const CustomText = styled.Text`
-    ${(props: any) => props.fontSize && `font-size: ${props.fontSize}px;`};
-    color: ${(props) => Colors[props.color]};
-    font-family: ${(props) => Fonts[props.fontFamily]};
-    ${(props) => `margin-top: ${props.marginTop}px;`};
-    ${(props) =>
-        `padding: ${props.paddingHorizontal}px ${props.paddingVertical}px;`};
+export const TextStyled = styled.Text`
+    ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`};
+    color: ${({ color }) => Colors[color]};
+    font-family: ${({ fontFamily }) => Fonts[fontFamily]};
+    ${({ marginTop }) => `margin-top: ${marginTop}px;`};
+    margin-bottom: ${({ marginBottom }) => `${marginBottom}px;`};
 `;
