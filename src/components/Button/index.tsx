@@ -1,67 +1,35 @@
 import React from 'react';
-import { TextStyle, View, ViewStyle } from 'react-native';
-
-import { RectButtonProps } from 'react-native-gesture-handler';
+import { PressableProps, TextStyle, ViewStyle } from 'react-native';
 
 import { Colors } from '../../values';
 
-import { ViewStyled, ButtonTextStyled, IconStyled } from './styles';
+import { PressableStyled, TextButtonStyled, IconStyled } from './styles';
 
-interface Props extends RectButtonProps {
-    flex?: ViewStyle['flex'];
-    position?: ViewStyle['position'];
-    height?: ViewStyle['height'];
-    top?: ViewStyle['top'];
-    left?: ViewStyle['left'];
-    right?: ViewStyle['right'];
-    bottom?: ViewStyle['bottom'];
-    onPress?: RectButtonProps['onPress'];
-    marginVertical?: ViewStyle['marginVertical'];
-    marginHorizontal?: ViewStyle['marginHorizontal'];
+interface Props extends PressableProps, ViewStyle {
     outline?: boolean;
-    color?: keyof typeof Colors;
     fontSize?: TextStyle['fontSize'];
+    color?: keyof typeof Colors;
     icon?: string;
-    borderRadius?: ViewStyle['borderRadius'];
     children: string;
 }
 
 const Button: React.FC<Props> = ({
-    flex,
-    position,
-    height,
-    top,
-    left,
-    right,
-    bottom,
-    onPress,
-    marginVertical = 0,
-    marginHorizontal = 0,
     outline = false,
-    color = 'PRIMARY_COLOR',
     fontSize,
+    color = 'PRIMARY_COLOR',
     icon,
-    borderRadius = 10,
     children,
+    ...rest
 }) => (
-    <ViewStyled
-        flex={flex}
-        position={position}
-        height={height}
-        top={top}
-        left={left}
-        right={right}
-        bottom={bottom}
-        onPress={onPress}
-        marginVertical={marginVertical}
-        marginHorizontal={marginHorizontal}
+    <PressableStyled
         outline={outline}
-        borderRadius={borderRadius}>
+        android_ripple={{ color: Colors.BLACK }}
+        {...rest}>
         {icon && <IconStyled name={icon} size={20} color={color} />}
-        <ButtonTextStyled outline={outline} fontSize={fontSize} color={color}>
+        <TextButtonStyled outline={outline} fontSize={fontSize} color={color}>
             {children}
-        </ButtonTextStyled>
-    </ViewStyled>
+        </TextButtonStyled>
+    </PressableStyled>
 );
 
 export default Button;

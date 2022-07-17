@@ -13,26 +13,8 @@ interface Props {
     children: React.ReactNode;
 }
 
-const Text: React.FC<Props> = ({
-    fontSize,
-    fontFamily = 'REGULAR',
-    color = 'BLACK',
-    marginTop = 0,
-    marginBottom = 0,
-    children,
-    ...rest
-}) => {
-    return (
-        <TextStyled
-            fontSize={fontSize}
-            fontFamily={fontFamily}
-            color={color}
-            marginTop={marginTop}
-            marginBottom={marginBottom}
-            {...rest}>
-            {children}
-        </TextStyled>
-    );
+const Text: React.FC<Props> = ({ children, ...rest }) => {
+    return <TextStyled {...rest}>{children}</TextStyled>;
 };
 
 export default Text;

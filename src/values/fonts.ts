@@ -1,2 +1,2 @@
-export const RobotoSlabMedium = 'RobotoSlab-Medium';
-export const RobotoSlabRegular = 'RobotoSlab-Regular';
+export const medium = 'RobotoSlab-Medium';
+export const regular = 'RobotoSlab-Regular';

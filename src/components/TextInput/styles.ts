@@ -19,7 +19,7 @@ export const TextInputStyled = styled.TextInput`
     flex: 1;
     color: ${Colors.WHITE};
     font-size: 16px;
-    font-family: ${Fonts.RobotoSlabRegular};
+    font-family: ${Fonts.regular};
 `;
 
 export const IconStyled = styled(Icon)`

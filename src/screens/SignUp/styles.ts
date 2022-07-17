@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 import { Colors } from '../../values';
 
-export const NewAccount = styled.View`
+export const BackToLogin = styled.View`
     flex: 1;
     position: absolute;
     height: 60px;

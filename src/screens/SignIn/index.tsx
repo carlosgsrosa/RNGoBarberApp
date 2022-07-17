@@ -1,17 +1,21 @@
 import React from 'react';
 import { Image } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Button, logo, Text, TextInput, View } from '../../components';
 
 import { NewAccount } from './styles';
 
 const SignIn: React.FC = () => {
+    const navigation = useNavigation();
+
     return (
         <View flex={1} centerY centerX padding={30}>
             <Image source={logo} />
             <Text
                 color="WHITE"
-                fontFamily="RobotoSlabMedium"
+                fontFamily="medium"
                 fontSize={20}
                 marginTop={64}
                 marginBottom={24}>
@@ -29,8 +33,12 @@ const SignIn: React.FC = () => {
                 Esqueci minha senha
             </Button>
             <NewAccount>
-                <Button outline color="YELLOW" icon="log-in">
-                    Criar conta
+                <Button
+                    outline
+                    color="YELLOW"
+                    icon="log-in"
+                    onPress={() => navigation.navigate('SignUp')}>
+                    Criar uma conta
                 </Button>
             </NewAccount>
         </View>
